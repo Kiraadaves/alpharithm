@@ -1,10 +1,13 @@
+import Hero from "@/components/hero";
+import Navbar from "@/components/navbar";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className=" min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
-      <main className=" flex flex-col gap-[32px] items-center sm:items-start flex-grow">
-        Main
+      <Navbar />{" "}
+      <main className=" flex-1">
+        <Hero />
       </main>
       <footer className="flex gap-[24px] flex-wrap items-center justify-center p-4">
         <a
