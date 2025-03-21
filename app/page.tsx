@@ -1,3 +1,4 @@
+import Client from "@/components/client";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
@@ -7,6 +8,8 @@ export default function Home() {
     <div className=" min-h-screen flex flex-col font-[family-name:var(--font-geist-sans)]">
       <Navbar />{" "}
       <main className=" flex-1">
+        <Hero />
+        <Client />
         <Hero />
       </main>
       <footer className="flex gap-[24px] flex-wrap items-center justify-center p-4">
