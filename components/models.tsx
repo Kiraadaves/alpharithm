@@ -33,24 +33,26 @@ const modelsTab = [
   },
 ];
 
+const aiCards = [...modelsTab, ...modelsTab];
+
 const Models = () => {
   const [activeTab, setActiveTab] = useState("Market Prediction");
   const carouselRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Scroll to the active card when tab changes
   useEffect(() => {
-    const activeIndex = modelsTab.findIndex(
-      (model) => model.name === activeTab
-    );
-    if (carouselRef.current && activeIndex !== -1) {
-      const cardWidth = carouselRef.current.scrollWidth / modelsTab.length;
+    const newIndex = modelsTab.findIndex((model) => model.name === activeTab);
+    setActiveIndex(newIndex);
+
+    if (carouselRef.current && newIndex >= 0) {
+      const cardWidth = carouselRef.current.offsetWidth;
       carouselRef.current.scrollTo({
-        left: cardWidth * activeIndex,
+        left: newIndex * cardWidth,
         behavior: "smooth",
       });
     }
   }, [activeTab]);
-
   return (
     <section
       id="models"
@@ -87,59 +89,52 @@ const Models = () => {
           </div>
         </div>
       </div>
-
-      <div ref={carouselRef} className="w-full overflow-x-hidden">
-        <div className="flex transition-transform duration-500 ease-in-out">
-          {modelsTab.map((model) => (
+      {/*Cards for model tabs*/}
+      <div className="overflow-hidden w-full">
+        <div
+          ref={carouselRef}
+          className="bg-purple-200 flex overflow-x-hidden snap-x snap-mandatory scroll-smooth"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
+          {aiCards.map((model, index) => (
             <div
-              key={model.name}
-              className={`flex-shrink-0 max-w-4xl transform transition-all duration-500 ${
-                activeTab === model.name
-                  ? "scale-100 opacity-100"
-                  : "scale-95 opacity-70"
-              }`}
+              key={index}
+              className={`flex-shrink-0 w-full snap-center transition-all duration-300`}
             >
-              <div className="flex flex-col md:flex-row pt-8 rounded-[11.7px] bg-[#f6faf3]">
-                <div className="md:w-1/2 flex flex-col justify-center space-y-6 pl-8">
-                  <h3 className="text-[#828282] font-semibold text-[19.5px]">
-                    {model.name === "Analytics" ? "Data Analytics" : model.name}
-                  </h3>
-                  <p className="text-[#22263F] font-semibold text-[28px] md:text-[42.9px]">
-                    {model.content}
-                  </p>
-                  <div>
-                    <button className="border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium">
-                      Learn More
-                    </button>
+              <div className="cards bg-[#f6faf3] md:w-[65%] mx-auto  rounded-[11.7px]  grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
+                <div className="h-full flex items-center ">
+                  <div className="pl-10 h-[300px] w-full space-y-6 ">
+                    <h3 className="text-[#828282] font-semibold text-[19.5px]">
+                      {model.name === "Analytics"
+                        ? "Data Analytics"
+                        : model.name}
+                    </h3>
+                    <p className="text-[#22263F] font-semibold text-[28px] md:text-[42.9px]">
+                      {model.content}
+                    </p>{" "}
+                    <div className="">
+                      <button className="border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium">
+                        Learn More
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div className="md:w-1/2 flex items-center justify-center">
+                <div className=" h-full rounded-br-[11.7px]">
                   <Image
                     src={model.src}
+                    alt="finance"
                     width={500}
-                    height={500}
-                    loading="lazy"
-                    alt={model.name}
-                    className="object-contain md:ml-auto"
+                    height={600}
+                    className="h-full w-full object-cover rounded-br-[11.7px]" // Add these classes
                   />
                 </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="flex justify-center gap-2 mt-4">
-        {modelsTab.map((model) => (
-          <button
-            key={`dot-${model.name}`}
-            onClick={() => setActiveTab(model.name)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              activeTab === model.name ? "bg-[#03217F]" : "bg-gray-300"
-            }`}
-            aria-label={`Go to ${model.name}`}
-          />
-        ))}
       </div>
     </section>
   );
