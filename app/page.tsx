@@ -1,5 +1,6 @@
 import Client from "@/components/client";
 import Hero from "@/components/hero";
+import Models from "@/components/models";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 
@@ -10,7 +11,7 @@ export default function Home() {
       <main className=" flex-1">
         <Hero />
         <Client />
-        <Hero />
+        <Models />
       </main>
       <footer className="flex gap-[24px] flex-wrap items-center justify-center p-4">
         <a
