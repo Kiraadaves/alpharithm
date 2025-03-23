@@ -50,7 +50,7 @@ const Navbar = () => {
         scrolled ? "bg-[#031969]" : "bg-[#04142B]"
       }`}
     >
-      <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-6">
+      <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-6 space-x-4">
         <Link
           href="/"
           className="flex items-center gap-2 z-50"
@@ -69,7 +69,7 @@ const Navbar = () => {
         <nav
           role="navigation"
           aria-label="Main navigation"
-          className="hidden lg:flex items-center gap-8"
+          className="hidden lg:flex items-center justify-end gap-8 pr-5 w-[45%]"
           data-aos="fade-down"
         >
           {navItems.map((item) => (
