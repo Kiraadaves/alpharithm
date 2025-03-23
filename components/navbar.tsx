@@ -79,7 +79,7 @@ const Navbar = () => {
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`${figtree.className} font-medium text-base text-[#ffffff]`}
+              className={`${figtree.className} font-medium text-base text-[#ffffff] hover:text-[#7191ff] transition-transform duration-300 hover:-translate-y-1`}
             >
               {item}
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4" data-aos="fade-left">
           <Link
             href="#"
-            className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
+            className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm hover:text-[#7191ff] hover:border-[#7191ff] transition-colors duration-300`}
           >
             Login
           </Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className={`${figtree.className} text-white text-base font-medium`}
+                  className={`${figtree.className} text-white text-base font-medium hover:text-[#7191ff] transition-transform duration-300 hover:scale-105 hover:-translate-y-1`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
@@ -141,7 +141,7 @@ const Navbar = () => {
               ))}
               <Link
                 href="#"
-                className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
+                className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm hover:text-[#7191ff] hover:border-[#7191ff] transition-colors duration-300`}
               >
                 Login
               </Link>
