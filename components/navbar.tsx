@@ -72,7 +72,7 @@ const Navbar = () => {
         <nav
           role="navigation"
           aria-label="Main navigation"
-          className=" hidden lg:flex items-center justify-end gap-8 pr-5"
+          className=" hidden lg:flex  items-center justify-end gap-8 pr-5"
           data-aos="fade-down"
         >
           {navItems.map((item) => (
