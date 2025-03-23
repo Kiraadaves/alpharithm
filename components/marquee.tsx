@@ -28,7 +28,7 @@ const Marquee = () => {
         {marqueeItems.map((item, index) => (
           <div
             key={index}
-            className={`inline-block mx-40  ${item.width} ${item.height} `}
+            className={`inline-block mx-24  ${item.width} ${item.height} `}
           >
             <div className={`flex items-center gap-3 `}>
               <Image
@@ -38,7 +38,9 @@ const Marquee = () => {
                 height={40}
                 loading="lazy"
               />
-              <p className="text-[#101828] font-medium text-lg">{item.name}</p>
+              <p className="text-[#101828] font-bold text-lg md:text-2xl">
+                {item.name}
+              </p>
             </div>
           </div>
         ))}
