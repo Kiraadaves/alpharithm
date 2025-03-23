@@ -85,13 +85,13 @@ const Navbar = () => {
 
         <div className="hidden lg:flex items-center gap-4" data-aos="fade-left">
           <Link
-            href="#contact"
+            href="#"
             className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
           >
             Login
           </Link>
           <Link
-            href="#contact"
+            href="#"
             className={`${figtree.className} px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm`}
           >
             Get Started Now
@@ -137,13 +137,13 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="#"
                 className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
               >
                 Login
               </Link>
               <Link
-                href="#contact"
+                href="#"
                 className={`${figtree.className} px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm`}
               >
                 Get Started Now
