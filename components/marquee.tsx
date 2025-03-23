@@ -13,7 +13,7 @@ const Marquee = () => {
   }, []);
 
   const items = [
-    { name: "Layers", width: "w-20", height: "h-5", src: "/catalog.png" },
+    { name: "Layers", width: "w-20", height: "h-10", src: "/layers.png" },
     { name: "Sisyphus", width: "w-20", height: "h-10", src: "/sisy.png" },
     { name: "Circooles", width: "w-20", height: "h-10", src: "/circo.png" },
     { name: "Catalog", width: "w-20", height: "h-10", src: "/catalog.png" },
