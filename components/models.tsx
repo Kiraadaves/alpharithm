@@ -125,10 +125,8 @@ const Models = () => {
             workflows."
           >
             Leverage the power of AI to automate, analyze, and optimize your
-            workflows. Our{" "}
-            <span className=" md:inline">
-              specialized models are designed to fit different business needs.
-            </span>
+            workflows. Our <br className="hidden md:block" /> specialized models
+            are designed to fit different business needs.
           </p>
           <div
             className={`flex justify-center transition-all duration-700 delay-200 ${
