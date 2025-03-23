@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center pt-16 overflow-hidden bg-[#04142B] py-12 md:py-32 z-10"
+      className="relative flex items-center overflow-hidden bg-[#04142B] pt-32 pb-16 z-10"
       role="region"
       aria-label="Hero Section"
     >
