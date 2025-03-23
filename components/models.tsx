@@ -4,6 +4,11 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useInView } from "react-intersection-observer";
+import { Figtree, Inter, Plus_Jakarta_Sans } from "next/font/google";
+
+const figtree = Figtree({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 interface Model {
   tab: number;
@@ -96,7 +101,9 @@ const Models = () => {
       <div className="container mx-auto px-4 relative items-center">
         <div className="space-y-6 text-center">
           <h1
-            className={`md:text-[50px] text-3xl text-[#22263F] md:leading-[52px] leading-tight font-semibold transition-all duration-700 ${
+            className={`${
+              figtree.className
+            } md:text-[50px] text-3xl text-[#22263F] md:leading-[52px] leading-tight font-semibold transition-all duration-700 ${
               sectionInView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -107,7 +114,9 @@ const Models = () => {
             <br className="hidden md:block" /> business needs
           </h1>
           <p
-            className={`text-base md:text-[22px] text-[#828282] leading-relaxed font-medium transition-all duration-700 delay-100 ${
+            className={` ${
+              plusJakartaSans.className
+            }  text-base md:text-[22px] text-[#828282] leading-relaxed font-medium transition-all duration-700 delay-100 ${
               sectionInView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -130,7 +139,8 @@ const Models = () => {
           >
             <div
               role="tablist"
-              className="flex items-center flex-wrap justify-center p-1 border border-[#e4e4e7] rounded-[12px] gap-8"
+              className="flex items-center flex-wrap justify-center p-1 border border-[#e4e4e7] rounded-[12px]
+              "
             >
               {modelsTab.map((model) => (
                 <button
@@ -140,7 +150,9 @@ const Models = () => {
                   aria-controls={`tabpanel-${model.tab}`}
                   onClick={() => setActiveTab(model.tab)}
                   key={model.name}
-                  className={`cursor-pointer px-[14px] py-[7px] rounded-lg transition-colors duration-200 text-base font-semibold ${
+                  className={`${
+                    figtree.className
+                  } cursor-pointer px-[14px] py-[7px] mx-3 rounded-lg transition-colors duration-200 text-base font-semibold ${
                     activeTab === model.tab
                       ? "bg-[#03217F] text-[#ffffff]"
                       : " text-[#A7A7A7] hover:bg-gray-100"
@@ -167,26 +179,30 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
-                    <h3 className="text-[#828282] font-semibold text-[19.5px]">
+                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                    <h3
+                      className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
+                    >
                       {visibleItems[0]?.name === "Analytics"
                         ? "Data Analytics"
                         : visibleItems[0]?.name}
                     </h3>
-                    <p className="text-[#22263F] font-semibold text-[28px] md:text-[42.9px]">
+                    <p
+                      className={`${figtree.className} text-[#22263F] font-semibold leading-tight text-[20px] md:text-[42.9px]`}
+                    >
                       {visibleItems[0]?.content}
                     </p>
                     <div>
                       <button
                         aria-label="Learn More"
-                        className="cursor-pointer border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium"
+                        className={`${figtree.className} cursor-pointer border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium`}
                       >
                         Learn More
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="md:h-full h-[300px] rounded-br-[11.7px]">
+                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
                   <Image
                     src={visibleItems[0]?.src}
                     alt={visibleItems[0]?.name}
@@ -208,26 +224,30 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] border border-[#03196915]  rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
-                    <h3 className="text-[#828282] font-semibold text-[19.5px]">
+                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                    <h3
+                      className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
+                    >
                       {visibleItems[1]?.name === "Analytics"
                         ? "Data Analytics"
                         : visibleItems[1]?.name}
                     </h3>
-                    <p className="text-[#22263F] font-semibold text-[28px] md:text-[42.9px]">
+                    <p
+                      className={`${figtree.className} text-[#22263F] leading-tight font-semibold text-[20px] md:text-[42.9px]`}
+                    >
                       {visibleItems[1]?.content}
                     </p>
                     <div>
                       <button
                         aria-label="Learn More"
-                        className="cursor-pointer border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium"
+                        className={`${figtree.className} cursor-pointer border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium`}
                       >
                         Learn More
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="md:h-full h-[300px] rounded-br-[11.7px]">
+                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
                   <Image
                     src={visibleItems[1]?.src}
                     alt={visibleItems[1]?.name}
@@ -249,26 +269,30 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
-                    <h3 className="text-[#828282] font-semibold text-[19.5px]">
+                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                    <h3
+                      className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
+                    >
                       {visibleItems[2]?.name === "Analytics"
                         ? "Data Analytics"
                         : visibleItems[2]?.name}
                     </h3>
-                    <p className="text-[#22263F] font-semibold text-[28px] md:text-[42.9px]">
+                    <p
+                      className={`${figtree.className} text-[#22263F] font-semibold leading-tight text-[20px] md:text-[42.9px]`}
+                    >
                       {visibleItems[2]?.content}
                     </p>
                     <div>
                       <button
                         aria-label="Learn More"
-                        className=" border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium cursor-pointer"
+                        className={`${figtree.className} border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium cursor-pointer`}
                       >
                         Learn More
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="md:h-full h-[300px] rounded-br-[11.7px]">
+                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
                   <Image
                     src={visibleItems[2]?.src}
                     alt={visibleItems[2]?.name}

@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
+import { Figtree } from "next/font/google";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const figtree = Figtree({ subsets: ["latin"] });
 
 const navItems = [
   "Models",
@@ -41,7 +44,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`${
+        figtree.className
+      } fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-[#031969]" : "bg-[#04142B]"
       }`}
     >
@@ -71,7 +76,7 @@ const Navbar = () => {
             <Link
               key={item}
               href={`#${item.toLowerCase()}`}
-              className={`font-medium text-base text-[#ffffff]`}
+              className={`${figtree.className} font-medium text-base text-[#ffffff]`}
             >
               {item}
             </Link>
@@ -81,13 +86,13 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4" data-aos="fade-left">
           <Link
             href="#contact"
-            className="px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
+            className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
           >
             Login
           </Link>
           <Link
             href="#contact"
-            className="px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
+            className={`${figtree.className} px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm`}
           >
             Get Started Now
           </Link>
@@ -125,7 +130,7 @@ const Navbar = () => {
                 <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-white text-base font-medium"
+                  className={`${figtree.className} text-white text-base font-medium`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
@@ -133,13 +138,13 @@ const Navbar = () => {
               ))}
               <Link
                 href="#contact"
-                className="px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
+                className={`${figtree.className} px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm`}
               >
                 Login
               </Link>
               <Link
                 href="#contact"
-                className="px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
+                className={`${figtree.className} px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm`}
               >
                 Get Started Now
               </Link>

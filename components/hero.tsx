@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { Figtree, Plus_Jakarta_Sans } from "next/font/google";
+
+const figtree = Figtree({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 const Hero = () => {
   const { ref, inView } = useInView({
@@ -11,7 +15,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center overflow-hidden bg-[#04142B] pt-32 pb-16 z-10"
+      className={`relative flex items-center overflow-hidden bg-[#04142B] pt-32 md:pb-24 pb-16 z-10`}
       role="region"
       aria-label="Hero Section"
     >
@@ -25,7 +29,9 @@ const Hero = () => {
       >
         <div className="space-y-4 md:space-y-6">
           <p
-            className={`text-[#7191ff] text-sm md:text-base font-bold transition-all duration-700 ${
+            className={`${
+              plusJakartaSans.className
+            } text-[#7191ff] text-sm md:text-base font-bold transition-all duration-700 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
             aria-label="Subheading: Leverage on Automation"
@@ -33,7 +39,9 @@ const Hero = () => {
             Leverage on Automation
           </p>
           <h1
-            className={`text-3xl md:text-[76px] text-[#ffffff] font-semibold leading-tight transition-all duration-700 delay-100 ${
+            className={`${
+              figtree.className
+            } text-3xl md:text-[76px] text-[#ffffff] font-semibold leading-tight transition-all duration-700 delay-100 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             aria-label="Main Heading: AI Models for Business Solutions"
@@ -43,7 +51,9 @@ const Hero = () => {
           </h1>
 
           <p
-            className={`text-sm md:text-[22px] text-[#FFFFFF] font-medium leading-relaxed transition-all duration-700 delay-200 ${
+            className={`${
+              plusJakartaSans.className
+            } text-sm md:text-[22px] text-[#FFFFFF] font-medium leading-relaxed transition-all duration-700 delay-200 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
             aria-label="Description: Leverage the power of AI to automate, analyze, and optimize your workflows."
@@ -61,7 +71,7 @@ const Hero = () => {
             }`}
           >
             <button
-              className="flex items-center justify-center h-12 md:h-[50px] px-6 md:px-[26px] py-3 md:py-[14px] font-semibold text-sm md:text-lg text-[#05152C] bg-[#ffffff] rounded-[12px] cursor-pointer"
+              className={`${figtree.className} flex items-center justify-center h-12 md:h-[50px] px-6 md:px-[26px] py-3 md:py-[14px] font-semibold text-sm md:text-lg text-[#05152C] bg-[#ffffff] rounded-[12px] cursor-pointer`}
               aria-label="Get Started"
             >
               Get Started
