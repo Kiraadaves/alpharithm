@@ -4,6 +4,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const navItems = [
   "Models",
@@ -16,6 +18,13 @@ const navItems = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,24 +41,32 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-[#031969]" : "bg-[#04142B]"
       }`}
     >
       <div className="w-[95%] mx-auto px-4 md:px-6 flex items-center justify-between py-6">
-        <Link href="/" className="flex items-center gap-2 z-50">
-          <div className="relative h-10 w-10">
-            <Image
-              src="/logo.png"
-              alt="logo-image"
-              width={100}
-              height={100}
-              loading="lazy"
-            />
-          </div>
+        <Link
+          href="/"
+          className="flex items-center gap-2 z-50"
+          data-aos="fade-right"
+        >
+          <Image
+            src="/logo.png"
+            alt="logo-image"
+            width={100}
+            height={100}
+            loading="lazy"
+            className="h-10 w-10"
+          />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav
+          role="navigation"
+          aria-label="Main navigation"
+          className="hidden lg:flex items-center gap-8"
+          data-aos="fade-down"
+        >
           {navItems.map((item) => (
             <Link
               key={item}
@@ -61,25 +78,27 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4" data-aos="fade-left">
           <Link
             href="#contact"
-            className="px-8 py-[10px]  rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
+            className="px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
           >
             Login
           </Link>
           <Link
             href="#contact"
-            className="px-8 py-[10px]  rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
+            className="px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
           >
             Get Started Now
           </Link>
         </div>
 
         <button
-          className="lg:hidden z-50"
+          className="cursor-pointer lg:hidden z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          data-aos="fade-left"
         >
           {isMenuOpen ? (
             <IoMdClose className={`h-6 w-6 text-[#ffffff]`} />
@@ -88,29 +107,39 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-[72px] bg-[#04142B33] z-40 p-4">
-            <nav className="flex flex-col bg-[#04142B] items-center gap-4 py-8">
+          <div
+            className={`lg:hidden fixed inset-0 top-[72px] bg-[#04142bab] z-40 p-4`}
+            role="dialog"
+            aria-labelledby="mobile-menu-label"
+          >
+            <nav
+              role="navigation"
+              aria-label="Mobile navigation"
+              className={`${
+                scrolled ? "bg-[#031969]" : "bg-[#04142B]"
+              } flex flex-col items-center gap-4 py-12`}
+              data-aos="fade-down"
+            >
               {navItems.map((item) => (
                 <Link
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-white text-base font-medium "
+                  className="text-white text-base font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
                 </Link>
-              ))}{" "}
+              ))}
               <Link
                 href="#contact"
-                className="px-8 py-[10px]  rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
+                className="px-8 py-[10px] rounded-[4px] border border-[#ffffff] text-white font-medium text-sm"
               >
                 Login
               </Link>
               <Link
                 href="#contact"
-                className="px-8 py-[10px]  rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
+                className="px-8 py-[10px] rounded-[4px] bg-[#ffffff] text-[#03061D] font-medium text-sm"
               >
                 Get Started Now
               </Link>
