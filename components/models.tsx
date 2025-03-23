@@ -91,31 +91,35 @@ const Models = () => {
     <section
       id="models"
       ref={sectionRef}
-      className="relative space-y-4 overflow-hidden bg-[#ffffff] md:py-20 py-15 z-10"
+      className="relative space-y-4 overflow-hidden bg-[#ffffff] md:py-20 py-10 z-10"
     >
       <div className="container mx-auto px-4 relative items-center">
         <div className="space-y-6 text-center">
           <h1
-            className={`md:text-[50px] text-3xl text-[#22263F] leading-[62px] font-semibold transition-all duration-700 ${
+            className={`md:text-[50px] text-3xl text-[#22263F] md:leading-[52px] leading-tight font-semibold transition-all duration-700 ${
               sectionInView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
+            aria-label="Main Heading: AI Models tailored for your Business needs"
           >
             AI Models tailored for your
-            <br />
-            business needs
+            <br className="hidden md:block" /> business needs
           </h1>
           <p
-            className={`text-base md:text-[22px] text-[#828282] leading-[38px] font-medium transition-all duration-700 delay-100 ${
+            className={`text-base md:text-[22px] text-[#828282] leading-relaxed font-medium transition-all duration-700 delay-100 ${
               sectionInView
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
+            aria-label="Description: Leverage the power of AI to automate, analyze, and optimize your
+            workflows."
           >
             Leverage the power of AI to automate, analyze, and optimize your
-            workflows. Our <br />
-            specialized models are designed to fit different business needs
+            workflows. Our{" "}
+            <span className=" md:inline">
+              specialized models are designed to fit different business needs.
+            </span>
           </p>
           <div
             className={`flex justify-center transition-all duration-700 delay-200 ${
@@ -126,7 +130,7 @@ const Models = () => {
           >
             <div
               role="tablist"
-              className="flex items-center flex-wrap justify-center p-1 border border-[#e4e4e7] rounded-[12px] md:gap-8"
+              className="flex items-center flex-wrap justify-center p-1 border border-[#e4e4e7] rounded-[12px] gap-8"
             >
               {modelsTab.map((model) => (
                 <button
@@ -158,7 +162,7 @@ const Models = () => {
               role="tabpanel"
               id={`tabpanel-${visibleItems[0]?.tab}`}
               aria-labelledby={`tab-${visibleItems[0]?.tab}`}
-              className={`flex-shrink-0 px-8 md:px-0 w-full md:w-[65%] overflow-hidden rounded-[11.7px]`}
+              className={`hidden md:block flex-shrink-0 px-8 md:px-0 w-full md:w-[65%] overflow-hidden rounded-[11.7px]`}
               data-aos="fade-down-left"
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
@@ -240,7 +244,7 @@ const Models = () => {
               role="tabpanel"
               id={`tabpanel-${visibleItems[2]?.tab}`}
               aria-labelledby={`tab-${visibleItems[2]?.tab}`}
-              className={`flex-shrink-0 px-8 md:px-0 w-full md:w-[65%] overflow-hidden rounded-[11.7px]`}
+              className={`hidden md:block flex-shrink-0 px-8 md:px-0 w-full md:w-[65%] overflow-hidden rounded-[11.7px]`}
               data-aos="fade-up-left"
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">

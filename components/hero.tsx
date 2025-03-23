@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="space-y-4 md:space-y-6">
           <p
             className={`text-[#7191ff] text-sm md:text-base font-bold transition-all duration-700 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }`}
             aria-label="Subheading: Leverage on Automation"
           >
@@ -55,7 +55,6 @@ const Hero = () => {
             </span>
           </p>
 
-          
           <div
             className={`flex justify-center transition-all duration-700 delay-300 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
