@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
       <div
         ref={ref}
-        className="w-[95%] mx-auto px-4 relative flex flex-col items-center text-center"
+        className="container mx-auto px-4 relative flex flex-col items-center text-center"
         role="contentinfo"
       >
         <div className="space-y-4 md:space-y-6">
