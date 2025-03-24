@@ -177,7 +177,11 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                  <div
+                    className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left"
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                  >
                     <h3
                       className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
                     >
@@ -199,15 +203,20 @@ const Models = () => {
                       </button>
                     </div>
                   </div>
-                </div>
-                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
-                  <Image
-                    src={visibleItems[0]?.src}
-                    alt={visibleItems[0]?.name}
-                    width={500}
-                    height={600}
-                    className="h-full w-full object-cover rounded-br-[11.7px]"
-                  />
+                </div><div
+                  className="lg:h-full h-[300px] rounded-br-[11.7px] overflow-hidden"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="h-full w-full transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src={visibleItems[0]?.src}
+                      alt={visibleItems[0]?.name}
+                      width={500}
+                      height={600}
+                      className="h-full w-full object-cover rounded-br-[11.7px]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -222,7 +231,11 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] border border-[#03196915]  rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                  <div
+                    className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left "
+                    data-aos="fade-right"
+                    data-aos-delay="200"
+                  >
                     <h3
                       className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
                     >
@@ -245,14 +258,20 @@ const Models = () => {
                     </div>
                   </div>
                 </div>
-                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
-                  <Image
-                    src={visibleItems[1]?.src}
-                    alt={visibleItems[1]?.name}
-                    width={500}
-                    height={600}
-                    className="h-full w-full object-cover rounded-br-[11.7px]"
-                  />
+                <div
+                  className="lg:h-full h-[300px] rounded-br-[11.7px] overflow-hidden"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="h-full w-full transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src={visibleItems[1]?.src}
+                      alt={visibleItems[1]?.name}
+                      width={500}
+                      height={600}
+                      className="h-full w-full object-cover rounded-br-[11.7px]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -267,7 +286,11 @@ const Models = () => {
             >
               <div className="cards bg-[#f6faf3] rounded-[11.7px] grid lg:grid-cols-2 grid-cols-1 gap-12 pt-10">
                 <div className="h-full flex items-center">
-                  <div className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left">
+                  <div
+                    className="md:pl-10 md:h-[300px] w-full space-y-6 text-center md:text-left"
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                  >
                     <h3
                       className={`${inter.className} text-[#828282] font-semibold text-[19.5px]`}
                     >
@@ -290,14 +313,20 @@ const Models = () => {
                     </div>
                   </div>
                 </div>
-                <div className="lg:h-full h-[300px] rounded-br-[11.7px]">
-                  <Image
-                    src={visibleItems[2]?.src}
-                    alt={visibleItems[2]?.name}
-                    width={500}
-                    height={600}
-                    className="h-full w-full object-cover rounded-br-[11.7px]"
-                  />
+                <div
+                  className="lg:h-full h-[300px] rounded-br-[11.7px] overflow-hidden"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="h-full w-full transition-transform duration-500 hover:scale-105">
+                    <Image
+                      src={visibleItems[2]?.src}
+                      alt={visibleItems[2]?.name}
+                      width={500}
+                      height={600}
+                      className="h-full w-full object-cover rounded-br-[11.7px]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
