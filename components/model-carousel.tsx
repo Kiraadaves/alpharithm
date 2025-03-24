@@ -5,20 +5,14 @@ import "swiper/css";
 import { A11y, Controller, Pagination, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
-import {
-  Analytics,
-  Content,
-  Customer,
-  Finance,
-  MarketPrediction,
-} from "./cards";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-import { Figtree, Plus_Jakarta_Sans } from "next/font/google";
+import { Figtree, Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Image from "next/image";
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function ModelsCarousel() {
   const [activeTab, setActiveTab] = useState(0);
@@ -40,11 +34,36 @@ export default function ModelsCarousel() {
 
   const tabs = useMemo(
     () => [
-      { label: "Market Prediction", component: <MarketPrediction /> },
-      { label: "Finance", component: <Finance /> },
-      { label: "Analytics", component: <Analytics /> },
-      { label: "Content Generation", component: <Content /> },
-      { label: "Customer Support", component: <Customer /> },
+      {
+        label: "Market Prediction",
+        description:
+          "Use AI insights for smarter business decisions and stay competitive.",
+        image: "/market.png",
+      },
+      {
+        label: "Finance",
+        description:
+          "Our AI models analyze financial data for confident investments.",
+        image: "/finance.png",
+      },
+      {
+        label: "Analytics",
+        description:
+          "Transform data into insights with AI analytics that enhance decisions.",
+        image: "/analytics.png",
+      },
+      {
+        label: "Content Generation",
+        description:
+          "Create quality content easily with AI that knows your brand and audience.",
+        image: "/content.png",
+      },
+      {
+        label: "Customer Support",
+        description:
+          "Use AI chatbots for instant, personalized customer support.",
+        image: "/customer.png",
+      },
     ],
     []
   );
@@ -116,7 +135,47 @@ export default function ModelsCarousel() {
                     activeTab === i ? "-mt-16" : ""
                   } transition-all duration-300 flex items-center justify-center`}
                 >
-                  {item.component}
+                  <div
+                    className={`relative flex h-full w-[100%] flex-col items-center gap-6 md:gap-0 rounded-lg  bg-[#F6FAF3]  pt-5 md:pt-10 transition-transform duration-500 ease-in-out md:w-[90%] md:flex-row md:pl-5 lg:w-full lg:pb-0 ${
+                      activeTab === i
+                        ? "scale-100 border border-[#03227f35] shadow-lg"
+                        : "scale-90"
+                    }`}
+                  >
+                    <div
+                      className="mt-3 w-full md:pl-5 text-center md:mt-0 md:w-[50%]  md:text-left space-y-6"
+                      data-aos={`${activeTab === i ? "fade-right" : ""} `}
+                      data-aos-delay="900"
+                    >
+                      <h3
+                        className={`${inter.className}  px-3 md:px-0 mt-2 md:mt-0 text-[#828282] font-semibold text-[19.5px]`}
+                      >
+                        {item.label}
+                      </h3>
+                      <p
+                        className={`${figtree.className} px-3 md:px-0 text-[#22263F] font-semibold leading-tight text-[20px] md:text-[42.9px]`}
+                      >
+                        {item.description}
+                      </p>
+                      <button
+                        aria-label="Learn More"
+                        className={`${figtree.className} cursor-pointer border-[0.97px] px-[16px] py-[9.75px] rounded-[3.9px] border-[#22263f] bg-[#03217f] text-white font-medium`}
+                      >
+                        {" "}
+                        Learn More
+                      </button>
+                    </div>
+
+                    <div className="p-2 md:p-0 md:flex w-full md:w-[50%] md:items-end md:justify-end">
+                      <Image
+                        src={item.image}
+                        alt={item.label}
+                        width={500}
+                        height={500}
+                        className=" h-auto w-full rounded-lg md:rounded-none md:rounded-br-lg md:max-w-[600px] transition-transform duration-500 hover:scale-[1.02]"
+                      />
+                    </div>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
