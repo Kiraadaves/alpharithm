@@ -1,6 +1,6 @@
 import Client from "@/components/client";
 import Hero from "@/components/hero";
-import Models from "@/components/models";
+import ModelsCarousel from "@/components/model-carousel";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ export default function Home() {
       <main className=" flex-1">
         <Hero />
         <Client />
-        <Models />
+        <ModelsCarousel />
       </main>
       <footer className="bg-[#031969] text-white flex gap-[24px] flex-wrap items-center justify-between md:px-6 px-4 py-6">
         <Image
