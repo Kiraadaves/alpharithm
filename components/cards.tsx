@@ -7,7 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export function MarketPrediction() {
   return (
     <div className="rounded-xl bg-[#F6FAF3] md:pl-16 pt-4 sm:pt-8 flex flex-col lg:flex-row items-center md:justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16  md:pr-16 lg:pr-0 text-center md:text-left">
+      <div
+        className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 md:pr-16 lg:pr-0 text-center md:text-left"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <p
           className={`${inter.className} text-base md:text-xl font-semibold tracking-[-2%] text-[#828282]`}
         >
@@ -27,10 +31,15 @@ export function MarketPrediction() {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105">
+
+      <div
+        className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
         <Image
           src="/market.png"
-          alt=""
+          alt="Market prediction illustration"
           width={520}
           height={520}
           className="object-cover object-center w-full h-auto sm:w-auto sm:h-auto"
@@ -43,17 +52,19 @@ export function MarketPrediction() {
 export function Finance() {
   return (
     <div className="rounded-xl bg-[#F6FAF3] md:pl-16 pt-4 sm:pt-8 flex flex-col lg:flex-row items-center md:justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left">
+      <div
+        className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <p
-          className={`${inter.className}  text-base md:text-xl font-semibold tracking-[-2%] text-[#828282] `}
+          className={`${inter.className} text-base md:text-xl font-semibold tracking-[-2%] text-[#828282]`}
         >
-          {" "}
           Finance
         </p>
         <h4
-          className={`${figtree.className}  text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
+          className={`${figtree.className} text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
         >
-          {" "}
           Our AI models analyze financial data for confident investments.
         </h4>
         <div>
@@ -65,10 +76,15 @@ export function Finance() {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105">
+
+      <div
+        className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
         <Image
           src="/finance.png"
-          alt=""
+          alt="Finance illustration"
           width={520}
           height={520}
           className="object-cover object-center w-full h-auto sm:w-auto sm:h-auto"
@@ -81,17 +97,19 @@ export function Finance() {
 export function Analytics() {
   return (
     <div className="rounded-xl bg-[#F6FAF3] md:pl-16 pt-4 sm:pt-8 flex flex-col lg:flex-row items-center md:justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left">
+      <div
+        className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <p
-          className={`${inter.className}  text-base md:text-xl font-semibold tracking-[-2%] text-[#828282] `}
+          className={`${inter.className} text-base md:text-xl font-semibold tracking-[-2%] text-[#828282]`}
         >
-          {" "}
           Data Analytics
         </p>
         <h4
-          className={`${figtree.className}  text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
+          className={`${figtree.className} text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
         >
-          {" "}
           Transform data into insights with AI analytics that enhance decisions.
         </h4>
         <div>
@@ -103,10 +121,15 @@ export function Analytics() {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105">
+
+      <div
+        className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
         <Image
           src="/analytics.png"
-          alt=""
+          alt="Data analytics illustration"
           width={520}
           height={520}
           className="object-cover object-center w-full h-auto sm:w-auto sm:h-auto"
@@ -119,17 +142,19 @@ export function Analytics() {
 export function Content() {
   return (
     <div className="rounded-xl bg-[#F6FAF3] md:pl-16 pt-4 sm:pt-8 flex flex-col lg:flex-row items-center md:justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left">
+      <div
+        className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <p
-          className={`${inter.className}  text-base md:text-xl font-semibold tracking-[-2%] text-[#828282] `}
+          className={`${inter.className} text-base md:text-xl font-semibold tracking-[-2%] text-[#828282]`}
         >
-          {" "}
           Content Generation
         </p>
         <h4
-          className={`${figtree.className}  text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
+          className={`${figtree.className} text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
         >
-          {" "}
           Create quality content easily with AI that knows your brand and
           audience.
         </h4>
@@ -142,10 +167,15 @@ export function Content() {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105">
+
+      <div
+        className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
         <Image
           src="/content.png"
-          alt=""
+          alt="Content generation illustration"
           width={520}
           height={520}
           className="object-cover object-center w-full h-auto sm:w-auto sm:h-auto"
@@ -158,17 +188,19 @@ export function Content() {
 export function Customer() {
   return (
     <div className="rounded-xl bg-[#F6FAF3] md:pl-16 pt-4 sm:pt-8 flex flex-col lg:flex-row items-center md:justify-between gap-4 overflow-hidden">
-      <div className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left">
+      <div
+        className="flex flex-col gap-4 md:gap-6 flex-1 md:mb-16 px-8 md:pl-0 md:pr-16 lg:pr-0 text-center md:text-left"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
         <p
-          className={`${inter.className}  text-base md:text-xl font-semibold tracking-[-2%] text-[#828282] `}
+          className={`${inter.className} text-base md:text-xl font-semibold tracking-[-2%] text-[#828282]`}
         >
-          {" "}
           Customer Support
         </p>
         <h4
-          className={`${figtree.className}  text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
+          className={`${figtree.className} text-xl md:text-[42.9px] font-semibold tracking-[-2%] text-[#22263F]`}
         >
-          {" "}
           Use AI chatbots for instant, personalized customer support.
         </h4>
         <div>
@@ -180,10 +212,15 @@ export function Customer() {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105">
+
+      <div
+        className="flex-1 flex justify-end mt-4 md:mt-0 w-full max-w-[520px] transition-transform duration-500 hover:scale-105"
+        data-aos="fade-left"
+        data-aos-delay="500"
+      >
         <Image
           src="/customer.png"
-          alt=""
+          alt="Customer support illustration"
           width={520}
           height={520}
           className="object-cover object-center w-full h-auto sm:w-auto sm:h-auto"
